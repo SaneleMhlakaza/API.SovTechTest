@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPITest.Models.Chuck;
+using SovTechTest.Models.Chuck;
 
-namespace WebAPITest.Models.Search
+namespace SovTechTest.Models.Search
 {
     public class ChuckSearchRecord : ISearchRecord
     {

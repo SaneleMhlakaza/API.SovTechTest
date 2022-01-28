@@ -9,12 +9,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using WebAPITest.Models;
-using WebAPITest.Models.Chuck;
-using WebAPITest.Models.Link;
-using WebAPITest.Models.Search;
+using SovTechTest.Models;
+using SovTechTest.Models.Chuck;
+using SovTechTest.Models.Link;
+using SovTechTest.Models.Search;
 
-namespace WebAPITest.Controllers
+namespace SovTechTest.Controllers
 {
     [Route("/[controller]")]
     [ApiController]

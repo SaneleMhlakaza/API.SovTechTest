@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPITest.Models.Search;
+using SovTechTest.Models.Search;
 
-namespace WebAPITest.Models.Chuck
+namespace SovTechTest.Models.Chuck
 {
-    public class RandomJoke:IResponse
+    public class RandomJoke
     {
         public List<string> categories { get; set; }
         public DateTime created_at { get; set; }

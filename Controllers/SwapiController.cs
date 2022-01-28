@@ -9,10 +9,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using WebAPITest.Models;
-using WebAPITest.Models.Link;
+using SovTechTest.Models;
+using SovTechTest.Models.Link;
 
-namespace WebAPITest.Controllers
+namespace SovTechTest.Controllers
 {
     [Route("/[controller]/people")]
     [ApiController]

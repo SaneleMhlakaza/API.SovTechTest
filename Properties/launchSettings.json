@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebAPITest": {
+    "SovTechTest": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "chuck",

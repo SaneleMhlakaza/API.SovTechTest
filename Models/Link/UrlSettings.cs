@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPITest.Models.Link
+namespace SovTechTest.Models.Link
 {
     public class UrlSettings
     {
