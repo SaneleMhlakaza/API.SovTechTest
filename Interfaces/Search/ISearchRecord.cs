@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SovTechTest.Models.Search
+namespace SovTechTest.Iterfaces.Search
 {
     public interface ISearchRecord
     {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SovTechTest.Models.Link
+﻿namespace SovTechTest.Models.Link
 {
     public class UrlSettings
     {

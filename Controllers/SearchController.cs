@@ -13,6 +13,7 @@ using SovTechTest.Models;
 using SovTechTest.Models.Chuck;
 using SovTechTest.Models.Link;
 using SovTechTest.Models.Search;
+using SovTechTest.Iterfaces.Search;
 
 namespace SovTechTest.Controllers
 {
@@ -34,33 +35,35 @@ namespace SovTechTest.Controllers
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    var search_urls = new string[] { _urlsettings.ChuckSearchUrl + searchword, _urlsettings.SwapiSearchUrl + searchword };
-                    var search_results = await Task.WhenAll(search_urls.Select(url => client.GetAsync(url)));
+                    var search_urls = new string[] { 
+                        _urlsettings.ChuckSearchUrl + searchword, 
+                        _urlsettings.SwapiSearchUrl + searchword };
 
-                    SearchResult searchResults = new SearchResult
-                    {
+                    var search_responses = await Task.WhenAll(search_urls.Select(url => client.GetAsync(url)));
+
+                    SearchResult searchResults = new SearchResult{
                         Results = new List<ISearchRecord>()
                     };
 
-                    foreach(var search_result in search_results)
+                    foreach(var search_response in search_responses)
                     {
-                        if (search_result.Content != null) {
+                        if (search_response.Content != null) {
 
                             
-                            if (search_result.RequestMessage.RequestUri.Host.Contains("chucknorris"))
+                            if (search_response.RequestMessage.RequestUri.Host.Contains("chucknorris"))
                             {
-                                var jokesstring = await client.GetStringAsync(search_result.RequestMessage.RequestUri.ToString());
+                                var jokesstring = await client.GetStringAsync(search_response.RequestMessage.RequestUri.ToString());
                                 searchResults.Results.Add(new ChuckSearchRecord
                                 {
-                                    ResultsApi = search_result.RequestMessage.RequestUri.Host,
+                                    ResultsApi = search_response.RequestMessage.RequestUri.Host,
                                     Records = JsonConvert.DeserializeObject<List<RandomJoke>>(JsonConvert.DeserializeObject<JObject>(jokesstring)["result"].ToString())
                                 });
                             }else
                             {
-                                var peoplestring = await client.GetStringAsync(search_result.RequestMessage.RequestUri.ToString());
+                                var peoplestring = await client.GetStringAsync(search_response.RequestMessage.RequestUri.ToString());
                                 searchResults.Results.Add(new SwapiSearchRecord
                                 {
-                                    ResultsApi = search_result.RequestMessage.RequestUri.Host,
+                                    ResultsApi = search_response.RequestMessage.RequestUri.Host,
                                     Records = JsonConvert.DeserializeObject<List<Person>>(JsonConvert.DeserializeObject<JObject>(peoplestring)["results"].ToString())
                                 });
                             }
