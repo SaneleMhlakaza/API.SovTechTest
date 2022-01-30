@@ -1,5 +1,5 @@
 # SovTechTest [![Build Status](https://dev.azure.com/sanelemhlakaza/SovTechTest/_apis/build/status/SaneleMhlakaza.API.SovTechTest?branchName=main)](https://dev.azure.com/sanelemhlakaza/SovTechTest/_build/latest?definitionId=6&branchName=main)
-Hosting API.SovTest( ASP.NET Core 3.1 Web API) as Windows service.
+Hosting API.SovTechTest( ASP.NET Core 3.1 Web API) as Windows service.
 
 First, you have to download the code from the repository to your localhost/cloud. To do that, First make sure you that you have git installed on your machine then you can either directly download the zip file and extract it to the location of your choice or you you can open a Cli terminal (e.g cmd,powershell, gitbash...) ideally from a folder that is easily accessible , once you have your cli terminal opened run the following git command:
   >`git clone https://github.com/SaneleMhlakaza/API.SovTechTest.git`
