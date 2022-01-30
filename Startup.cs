@@ -34,6 +34,7 @@ namespace SovTechTest
                 Description = "sample service for learner"
             }));
             services.Configure<UrlSettings>(Configuration.GetSection("APIUrls"));
+            services.AddMvc().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +44,7 @@ namespace SovTechTest
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseHttpsRedirection();
 
             app.UseRouting();
