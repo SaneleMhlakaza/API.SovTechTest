@@ -45,7 +45,7 @@ namespace SovTechTest
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
